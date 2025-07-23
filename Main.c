@@ -1,31 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jaicastr <jaicastr@student.42madrid.com>   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/16 17:13:42 by jaicastr          #+#    #+#             */
-/*   Updated: 2025/07/16 17:13:49 by jaicastr         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
-#include "minish.h"
-
-int	main(int argc, char **argv, char **envp)
+char ***parse_arguments(int argc, char *argv[])
 {
-	t_data	data;
+    char    ***arguments;
+    char    **parameter;
+    int     i;
+    
+    i = 0;
+    arguments = malloc((argc -1) * sizeof(char));
+    if (!arguments)
+        return (0);
+    parameter = ft_split(arguments, "");
+    
+}
 
-	signal_setup();
-	data = getopts(argc, argv, envp);
-	if (data.phelp)
-	{
-		phelp();
-		return (clean_data(&data), EXIT_SUCCESS);
-	}
-	if (!data.oneliner)
-		core_loop(&data);
-	else
-		handle_oneliner(&data);
-	clean_data(&data);
+
+int main(int argc, char *argv[])
+{
+    int i;
+    char ***arguments;
+    
+    i = 0;
+    arguments = parse_arguments(argc, argv);
+
 }
