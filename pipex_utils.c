@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   pipex_utils.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mparra-s <mparra-s@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 12:57:11 by mparra-s          #+#    #+#             */
-/*   Updated: 2025/07/22 19:18:44 by mparra-s         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "pipex.h"
 
 int	create_pipe(int pipe_fd[2])
@@ -47,7 +35,7 @@ int	open_file_out(char *file, t_pipex *pipex)
 {
 	int	fd;
 
-	fd = open(file, O_WRONLY | O_CREAT | O_TRUNC, 0644);  // O_CREAT  Si el archivo no existe, se crea.  ||  O_TRUNC	Si el archivo ya existe, se trunca (se borra su contenido).
+	fd = open(file, O_WRONLY | O_CREAT | O_TRUNC, 0644);i
 	if (fd < 0)
 	{
 		perror (file);
